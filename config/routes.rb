@@ -1,4 +1,13 @@
 Sendthemin::Application.routes.draw do
+  resources :permanent_guests
+
+
+  resources :vendors
+
+
+  resources :guests
+
+
   devise_for :users
 
   get 'about' => 'pages#about'

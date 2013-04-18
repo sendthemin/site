@@ -1,0 +1,14 @@
+<%= simple_form_for(@guest) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :guest_name %>
+    <%= f.input :arrival_date %>
+    <%= f.input :stay_length %>
+    <%= f.input :departure_date %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

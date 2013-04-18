@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  vendor_name: MyString
+  arrival_date: 2013-04-17
+  access_frequency: false
+
+two:
+  vendor_name: MyString
+  arrival_date: 2013-04-17
+  access_frequency: false

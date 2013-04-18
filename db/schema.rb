@@ -11,7 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130416023715) do
+ActiveRecord::Schema.define(:version => 20130418031701) do
+
+  create_table "guests", :force => true do |t|
+    t.string   "guest_name"
+    t.date     "arrival_date"
+    t.boolean  "stay_length"
+    t.date     "departure_date"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.integer  "user_id"
+  end
+
+  add_index "guests", ["user_id"], :name => "index_guests_on_user_id"
+
+  create_table "permanent_guests", :force => true do |t|
+    t.string   "permanent_guest_name"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -31,5 +49,13 @@ ActiveRecord::Schema.define(:version => 20130416023715) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "vendors", :force => true do |t|
+    t.string   "vendor_name"
+    t.date     "arrival_date"
+    t.boolean  "access_frequency"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
 
 end

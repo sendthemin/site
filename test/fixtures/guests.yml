@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  guest_name: MyString
+  arrival_date: 2013-04-17
+  stay_length: false
+  departure_date: 2013-04-17
+
+two:
+  guest_name: MyString
+  arrival_date: 2013-04-17
+  stay_length: false
+  departure_date: 2013-04-17

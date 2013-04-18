@@ -1,0 +1,23 @@
+<h1>Listing permanent_guests</h1>
+
+<table>
+  <tr>
+    <th>Permanent guest name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @permanent_guests.each do |permanent_guest| %>
+  <tr>
+    <td><%= permanent_guest.permanent_guest_name %></td>
+    <td><%= link_to 'Show', permanent_guest %></td>
+    <td><%= link_to 'Edit', edit_permanent_guest_path(permanent_guest) %></td>
+    <td><%= link_to 'Destroy', permanent_guest, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Permanent guest', new_permanent_guest_path %>
