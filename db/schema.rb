@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130519204753) do
+ActiveRecord::Schema.define(:version => 20130519214513) do
 
   create_table "communities", :force => true do |t|
     t.string   "name"
@@ -39,23 +39,34 @@ ActiveRecord::Schema.define(:version => 20130519204753) do
 
   create_table "guests", :force => true do |t|
     t.string   "name"
-    t.integer  "user_id"
+    t.integer  "ident_id"
     t.boolean  "permanent"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  add_index "guests", ["user_id"], :name => "index_guests_on_user_id"
+  add_index "guests", ["ident_id"], :name => "index_guests_on_ident_id"
+
+  create_table "idents", :force => true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.integer  "community_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "idents", ["community_id"], :name => "index_idents_on_community_id"
+  add_index "idents", ["user_id"], :name => "index_idents_on_user_id"
 
   create_table "instances", :force => true do |t|
     t.integer  "unit_id"
-    t.integer  "user_id"
+    t.integer  "ident_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
+  add_index "instances", ["ident_id"], :name => "index_instances_on_ident_id"
   add_index "instances", ["unit_id"], :name => "index_instances_on_unit_id"
-  add_index "instances", ["user_id"], :name => "index_instances_on_user_id"
 
   create_table "permanent_guests", :force => true do |t|
     t.string   "permanent_guest_name"
@@ -104,14 +115,14 @@ ActiveRecord::Schema.define(:version => 20130519204753) do
     t.datetime "checkin"
     t.integer  "duration"
     t.integer  "guest_id"
-    t.integer  "user_id"
+    t.integer  "ident_id"
     t.integer  "unit_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   add_index "visits", ["guest_id"], :name => "index_visits_on_guest_id"
+  add_index "visits", ["ident_id"], :name => "index_visits_on_ident_id"
   add_index "visits", ["unit_id"], :name => "index_visits_on_unit_id"
-  add_index "visits", ["user_id"], :name => "index_visits_on_user_id"
 
 end

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @ident.name %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @ident.user %>
+</p>
+
+
+<%= link_to 'Edit', edit_ident_path(@ident) %> |
+<%= link_to 'Back', idents_path %>
