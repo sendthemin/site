@@ -1,6 +1,4 @@
 class GuestsController < ApplicationController
-  before_filter :authenticate_user!, except:
-  [:index]
   # GET /guests
   # GET /guests.json
   def index
@@ -26,7 +24,7 @@ class GuestsController < ApplicationController
   # GET /guests/new
   # GET /guests/new.json
   def new
-    @guest = current_user.guests.new
+    @guest = Guest.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,13 +34,13 @@ class GuestsController < ApplicationController
 
   # GET /guests/1/edit
   def edit
-    @guest = current_user.guests.find(params[:id])
+    @guest = Guest.find(params[:id])
   end
 
   # POST /guests
   # POST /guests.json
   def create
-    @guest = current_user.guests.new(params[:guest])
+    @guest = Guest.new(params[:guest])
 
     respond_to do |format|
       if @guest.save
@@ -58,7 +56,7 @@ class GuestsController < ApplicationController
   # PUT /guests/1
   # PUT /guests/1.json
   def update
-    @guest = current_user.guests.find(params[:id])
+    @guest = Guest.find(params[:id])
 
     respond_to do |format|
       if @guest.update_attributes(params[:guest])
@@ -74,7 +72,7 @@ class GuestsController < ApplicationController
   # DELETE /guests/1
   # DELETE /guests/1.json
   def destroy
-    @guest = current_user.guests.find(params[:id])
+    @guest = Guest.find(params[:id])
     @guest.destroy
 
     respond_to do |format|

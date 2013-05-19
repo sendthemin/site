@@ -1,11 +1,26 @@
 Sendthemin::Application.routes.draw do
+  resources :instances
+
+
+  resources :visits
+
+
+  resources :guests
+
+
+  resources :customers
+
+
+  resources :communities
+
+
+  resources :units
+
+
   resources :permanent_guests
 
 
   resources :vendors
-
-
-  resources :guests
 
 
   devise_for :users

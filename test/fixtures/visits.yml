@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  checkin: 2013-05-19 16:45:17
+  duration: 1
+  guest: 
+  user: 
+  unit: 
+
+two:
+  checkin: 2013-05-19 16:45:17
+  duration: 1
+  guest: 
+  user: 
+  unit: 

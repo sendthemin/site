@@ -11,25 +11,67 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130418050927) do
+ActiveRecord::Schema.define(:version => 20130519204753) do
+
+  create_table "communities", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "phone"
+    t.integer  "customer_id"
+    t.string   "website"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "communities", ["customer_id"], :name => "index_communities_on_customer_id"
+
+  create_table "customers", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "billing_address"
+    t.string   "website"
+    t.string   "contact"
+    t.string   "phone"
+    t.string   "email"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "guests", :force => true do |t|
-    t.string   "guest_name"
-    t.date     "arrival_date"
-    t.boolean  "stay_length"
-    t.date     "departure_date"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.string   "name"
     t.integer  "user_id"
+    t.boolean  "permanent"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "guests", ["user_id"], :name => "index_guests_on_user_id"
+
+  create_table "instances", :force => true do |t|
+    t.integer  "unit_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "instances", ["unit_id"], :name => "index_instances_on_unit_id"
+  add_index "instances", ["user_id"], :name => "index_instances_on_user_id"
 
   create_table "permanent_guests", :force => true do |t|
     t.string   "permanent_guest_name"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
   end
+
+  create_table "units", :force => true do |t|
+    t.string   "address"
+    t.string   "name"
+    t.integer  "community_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "units", ["community_id"], :name => "index_units_on_community_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -57,5 +99,19 @@ ActiveRecord::Schema.define(:version => 20130418050927) do
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end
+
+  create_table "visits", :force => true do |t|
+    t.datetime "checkin"
+    t.integer  "duration"
+    t.integer  "guest_id"
+    t.integer  "user_id"
+    t.integer  "unit_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "visits", ["guest_id"], :name => "index_visits_on_guest_id"
+  add_index "visits", ["unit_id"], :name => "index_visits_on_unit_id"
+  add_index "visits", ["user_id"], :name => "index_visits_on_user_id"
 
 end
