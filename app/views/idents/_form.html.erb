@@ -5,6 +5,7 @@
     <%= f.input :name %>
     <%= f.association :user %>
     <%= f.association :community %>
+     <%= f.collection_select :role, Ident::ROLES, :to_s, :humanize %>
   </div>
 
   <div class="form-actions">

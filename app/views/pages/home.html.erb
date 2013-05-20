@@ -1,12 +1,3 @@
-<%= session[:selected] %>
-<% unless session[:selected] == nil %>
-<div class = "center hero-unit">
-	<h1>Yo mothafucking ident is
-		<%= session[:selected] %>
-	</h1>
-</div>
-<% end %>
-
 <% unless user_signed_in? %>
 <div class="center hero-unit">
     <h1>Welcome! </h1>
@@ -18,6 +9,10 @@
         </p>
 </div>
 <% end %>
+<% if user_signed_in? %>
 <%= render 'idents/index' %>
+<% if can? :read, Customer %>
 <%= render 'customers/index' %>
+<% end %>
 <%= render 'communities/index' %>
+<% end %>

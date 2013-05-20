@@ -1,8 +1,15 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(ident)
+  def initialize(user, ident)
+    @ident = ident || Ident.new
+    @user = user || User.new
+if ident.role == "superadmin"
     can :manage, :all
+else
+    can :manage, Community
+end
+# can :manage, :all
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)

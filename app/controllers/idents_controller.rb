@@ -3,6 +3,18 @@ class IdentsController < ApplicationController
   # GET /idents.json
   def index
     @idents = Ident.all
+    @myidents = current_user.idents.all
+    if @myidents.length == 0
+       @ident = Ident.new
+      render 'idents/new' and return
+    end
+    unless @myidents.length > 1
+
+        
+  session[:selected] = @myidents.first
+    render 'pages/home' and return
+  end
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @idents }
@@ -12,7 +24,6 @@ class IdentsController < ApplicationController
   def select
     session[:selected] = Ident.find(params[:id])
 
-    @fucker = Ident.find(params[:id])
     @idents = Ident.all
     @communities = Community.all
     @customers = Customer.all
@@ -54,6 +65,7 @@ class IdentsController < ApplicationController
 
     respond_to do |format|
       if @ident.save
+        session[:selected] = @ident.id
         format.html { redirect_to @ident, notice: 'Ident was successfully created.' }
         format.json { render json: @ident, status: :created, location: @ident }
       else
