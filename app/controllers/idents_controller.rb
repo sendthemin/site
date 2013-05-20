@@ -3,11 +3,21 @@ class IdentsController < ApplicationController
   # GET /idents.json
   def index
     @idents = Ident.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @idents }
     end
+  end
+
+  def select
+    session[:selected] = Ident.find(params[:id])
+
+    @fucker = Ident.find(params[:id])
+    @idents = Ident.all
+    @communities = Community.all
+    @customers = Customer.all
+    @myidents = current_user.idents.all
+    render 'pages/home'
   end
 
   # GET /idents/1

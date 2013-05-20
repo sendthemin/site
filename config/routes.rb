@@ -1,4 +1,5 @@
 Sendthemin::Application.routes.draw do
+  match 'idents/select' => 'idents#select'
   resources :idents
 
 

@@ -1,9 +1,14 @@
 class Ident < ActiveRecord::Base
   belongs_to :user
-  attr_accessible :name
+  belongs_to :community
+  attr_accessible :name, :role, :user_id, :community_id
 
   has_many :instances
   has_many :visits
   has_many :guests, :through => :visits
   has_many :units, :through => :instances
+
+  ROLES = %w[superadmin, customer, community_admin, gatekeeper, resident]
+
+
 end

@@ -1,0 +1,26 @@
+<h1>Listing idents</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>User</th>
+    <th>Community</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @myidents.each do |ident| %>
+  <tr>
+    <td><%= ident.name %></td>
+    <td><%= ident.user.name %></td>
+    <td><%= ident.community.name %></td>
+    <td><%= link_to 'Show', ident %></td>
+    <td><%= link_to 'Edit', edit_ident_path(ident) %></td>
+    <td><%= link_to 'Destroy', ident, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Ident', new_ident_path %>
