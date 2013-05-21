@@ -19,19 +19,6 @@
                     </ul>
                     <ul class="nav pull-right">
                       <% if user_signed_in? %>
-                        <li><div class="btn-group">
-                              <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                                Identities
-                                <span class="caret"></span>
-                              </a>
-                              <ul class="dropdown-menu">
-                                <!-- dropdown menu links -->
-                                <li><% @myidents.each do |ident| %>
-                                    <%= link_to ident.name, :controller => "idents", :action => "select", :id => ident %>
-                                    <% end -%>
-                                </li>
-                              </ul>
-                            </div></li>
                         <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
                         <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
                       <% else %>

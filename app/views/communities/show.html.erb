@@ -1,5 +1,22 @@
 <p id="notice"><%= notice %></p>
 
+<div class="row">
+    <div class="span6 offset3">
+        <div class="well">
+            <%= image_tag @community.image %>
+            <p>
+              <%= @community.name %>
+            </p>
+            <p>
+            </p>
+            <% if current_user == @community.name %>
+                <%= link_to 'Edit', edit_community_path(@community) %> |
+            <% end %>
+            <%= link_to 'Back', community_path %>
+        </div>
+    </div>
+</div>
+
 <p>
   <b>Name:</b>
   <%= @community.name %>

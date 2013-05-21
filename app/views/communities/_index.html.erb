@@ -7,6 +7,7 @@
     <th>Phone</th>
     <th>Customer</th>
     <th>Website</th>
+    <th>Image</th>
     <th></th>
     <th></th>
     <th></th>
@@ -19,6 +20,7 @@
     <td><%= community.phone %></td>
     <td><%= community.customer.name %></td>
     <td><%= community.website %></td>
+    <td><%= community.image %></td>
     <td><%= link_to 'Show', community %></td>
     <td><%= link_to 'Edit', edit_community_path(community) %></td>
     <td><%= link_to 'Destroy', community, method: :delete, data: { confirm: 'Are you sure?' } %></td>

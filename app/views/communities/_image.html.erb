@@ -1,0 +1,6 @@
+    <tr>
+        <td><%= image_tag community.image(:medium) %></td>
+        <td><%= link_to 'Show', community %></td>
+        <td><%= link_to 'Edit', edit_community_path(pin) %></td>
+        <td><%= link_to 'Destroy', community, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>

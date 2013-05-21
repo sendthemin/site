@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130520003342) do
+ActiveRecord::Schema.define(:version => 20130521040029) do
 
   create_table "communities", :force => true do |t|
     t.string   "name"
@@ -19,8 +19,12 @@ ActiveRecord::Schema.define(:version => 20130520003342) do
     t.string   "phone"
     t.integer  "customer_id"
     t.string   "website"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "communities", ["customer_id"], :name => "index_communities_on_customer_id"
