@@ -1,26 +1,18 @@
-<h1>Listing idents</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>User</th>
-    <th>Community</th>
-    <th></th>
-    <th></th>
-  </tr>
+<h1>Choose an Account</h1>
 
 <% @myidents.each do |ident| %>
-  <tr>
-    <td><%= ident.name %></td>
-    <td><%= ident.user.name %></td>
-    <td><%= ident.community.name %></td>
-    <td><%= link_to 'Show', ident %></td>
-    <td><%= link_to 'Edit', edit_ident_path(ident) %></td>
-    <td><%= link_to 'Destroy', ident, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+     <div class="fluid-row">
+        <div class="span3">
+            <div class="well inline">
+              <h3 align ="center"><%= ident.community.name %></h3>
+                <%= image_tag ident.community.image(:medium) %>
+                    <p align="center"><%= link_to 'Switch Account', :controller => "idents", :action => "select", :id => ident %></p>
+            </div>
+        </div>
+    </div>
 <% end %>
 </table>
 
 <br />
-
+<div style="clear:both;"></div>
 <%= link_to 'New Ident', new_ident_path %>

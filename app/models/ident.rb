@@ -1,7 +1,7 @@
 class Ident < ActiveRecord::Base
   belongs_to :user
   belongs_to :community
-  attr_accessible :name, :role, :user_id, :community_id
+  attr_accessible :name, :role, :user_id, :community_id, :image
 
   has_many :instances
   has_many :visits

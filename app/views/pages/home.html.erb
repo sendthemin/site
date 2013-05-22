@@ -10,9 +10,10 @@
 </div>
 <% end %>
 <% if user_signed_in? %>
-<%= render 'idents/index' %>
-<% if can? :read, Customer %>
-<%= render 'customers/index' %>
-<% end %>
-<%= render 'communities/index' %>
+	<%= render 'idents/accounts' %>
+	<div style="clear:both;"></div>
+	<% if can? :read, Customer %>
+		<%= render 'customers/index' %>
+	<% end %>
+	<%= render 'communities/index' %>
 <% end %>

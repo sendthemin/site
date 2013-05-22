@@ -1,9 +1,8 @@
-<h1>Listing communities</h1>
+<h1>Communities</h1>
 
 
-<!-- <table class="table table-striped table-bordered">
+<table class="table table-striped table-bordered">
   <tr>
-    <th>Image</th>
     <th>Name</th>
     <th>Address</th>
     <th>Phone</th>
@@ -12,28 +11,20 @@
     <th></th>
     <th></th>
     <th></th>
-  </tr> -->
+  </tr>
 
 <% @communities.each do |community| %>
- <!--  <tr> -->
-    <div class="fluid-row">
-        <div class="span3">
-            <div class="well inline">
-                <%= image_tag community.image(:medium) %>
-                    <h3 align="center"><%= link_to community.name, community %></h3>
-            </div>
-        </div>
-    </div>
-    <!-- <td><%= community.address %></td>
+    <td><%= community.name %></td>
+    <td><%= community.address %></td>
     <td><%= community.phone %></td>
     <td><%= community.customer.name %></td>
     <td><%= community.website %></td>
     <td><%= link_to 'Show', community %></td>
     <td><%= link_to 'Edit', edit_community_path(community) %></td>
     <td><%= link_to 'Destroy', community, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr> -->
+  </tr> 
 <% end %>
-<!-- </table> -->
+    </table>
 <div style="clear:both;"></div>
 <br />
 <%= link_to 'New Community', new_community_path %>
