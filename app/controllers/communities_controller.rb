@@ -14,7 +14,7 @@ class CommunitiesController < ApplicationController
   # GET /communities/1.json
   def show
     @community = Community.find(params[:id])
-
+    @myunits = @community.units.all
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @community }

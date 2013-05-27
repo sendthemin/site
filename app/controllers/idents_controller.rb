@@ -28,6 +28,7 @@ class IdentsController < ApplicationController
     @communities = Community.all
     @customers = Customer.all
     @myidents = current_user.idents.all
+    @current_ident = Ident.find(params[:id])
     render 'pages/home'
   end
 

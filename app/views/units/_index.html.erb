@@ -1,20 +1,21 @@
 <h1>Listing units</h1>
 
-<table>
+<table class="table table-striped table-bordered">
   <tr>
     <th>Address</th>
     <th>Name</th>
     <th>Community</th>
-    <th></th>
+    <th>Occupied?</th>
     <th></th>
     <th></th>
   </tr>
 
-<% @units.each do |unit| %>
+<% @myunits.each do |unit| %>
   <tr>
     <td><%= unit.address %></td>
     <td><%= unit.name %></td>
     <td><%= unit.community %></td>
+    <td><% if unit.occupied %>Yes<% end  %></td>
     <td><%= link_to 'Show', unit %></td>
     <td><%= link_to 'Edit', edit_unit_path(unit) %></td>
     <td><%= link_to 'Destroy', unit, method: :delete, data: { confirm: 'Are you sure?' } %></td>

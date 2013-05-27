@@ -6,6 +6,8 @@ class PagesController < ApplicationController
   	@customers = Customer.all
   	unless current_user == nil
   	@myidents = current_user.idents.all
+    @current_ident = Ident.find(session[:selected])
+    @myinstances = @current_ident.instances.all
   	else
   	@myidents = nil
   	end

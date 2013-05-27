@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130521040029) do
+ActiveRecord::Schema.define(:version => 20130527204314) do
 
   create_table "communities", :force => true do |t|
     t.string   "name"
@@ -73,18 +73,13 @@ ActiveRecord::Schema.define(:version => 20130521040029) do
   add_index "instances", ["ident_id"], :name => "index_instances_on_ident_id"
   add_index "instances", ["unit_id"], :name => "index_instances_on_unit_id"
 
-  create_table "permanent_guests", :force => true do |t|
-    t.string   "permanent_guest_name"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
-  end
-
   create_table "units", :force => true do |t|
     t.string   "address"
     t.string   "name"
     t.integer  "community_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.boolean  "occupied"
   end
 
   add_index "units", ["community_id"], :name => "index_units_on_community_id"
@@ -108,14 +103,6 @@ ActiveRecord::Schema.define(:version => 20130521040029) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
-
-  create_table "vendors", :force => true do |t|
-    t.string   "vendor_name"
-    t.date     "arrival_date"
-    t.boolean  "access_frequency"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
-  end
 
   create_table "visits", :force => true do |t|
     t.datetime "checkin"
