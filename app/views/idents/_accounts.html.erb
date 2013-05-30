@@ -4,8 +4,9 @@
      <div class="fluid-row">
         <div class="span3">
             <div class="well inline">
-              <h3 align ="center"><%= ident.community.name %></h3>
-                <%= image_tag ident.community.image(:medium) %>
+              <h3 align ="center"><%= ident.name %></h3>
+              <p align = "center"><i><%= ident.community.name %></i>	</p>
+                <%# image_tag ident.community.image(:medium) %>
                     <p align="center"><%= link_to 'Switch Account', :controller => "idents", :action => "select", :id => ident %></p>
             </div>
         </div>

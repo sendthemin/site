@@ -104,4 +104,17 @@
 		<%= render 'index/customers' %>
 	<% end %>
 	<%= render 'communities/index' %>
+
+	<% if @current_ident.role = 'resident' %>
+		<div>
+			<%= render 'instances/index' %>
+
+
+		</div>
+
+	<% end  %>
+
+	<div>
+		Current role: <%= @current_ident.role %>
+	</div>
 <% end %>
