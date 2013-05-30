@@ -7,10 +7,10 @@ has_many :visits, :through => :idents
 has_many :units, :through => :instances
 has_many :units
 
-validates_attachment :image, presence: true,
-                            content_type: { content_type: ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'] },
-                            size: { less_than: 5.megabytes }
-  belongs_to :community
-  has_attached_file :image, styles: { medium: "240x320", thumb: "60x80" }
+# validates_attachment :image, presence: true,
+#                             content_type: { content_type: ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'] },
+#                             size: { less_than: 5.megabytes }
+#   belongs_to :community
+#   has_attached_file :image, styles: { medium: "240x320>", thumb: "60x80>" }
 
 end

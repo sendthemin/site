@@ -14,6 +14,9 @@ class InstancesController < ApplicationController
   # GET /instances/1.json
   def show
     @instance = Instance.find(params[:id])
+    @current_ident = Ident.find(session[:selected])
+    @guest = Guest.new
+    @guests = @current_ident.guests.all
 
     respond_to do |format|
       format.html # show.html.erb

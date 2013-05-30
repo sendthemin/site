@@ -2,13 +2,16 @@
 
 <p>
   <b>Unit:</b>
-  <%= @instance.unit %>
+  <%= @instance.unit.name %>
+  <div>
+  	<%= render 'guests/form' %>
+  </div>
+   <div>
+  	<%= render 'guests/index' %>
+  </div>
 </p>
 
-<p>
-  <b>User:</b>
-  <%= @instance.user %>
-</p>
+
 
 
 <%= link_to 'Edit', edit_instance_path(@instance) %> |
