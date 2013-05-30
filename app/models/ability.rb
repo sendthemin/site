@@ -9,6 +9,8 @@ if ident.role == "superadmin"
 else
     can :manage, Community
 end
+
+
 # can :manage, :all
     # Define abilities for the passed in user here. For example:
     #
