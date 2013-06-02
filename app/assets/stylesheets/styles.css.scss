@@ -218,3 +218,16 @@ body{
         }
       
       }
+/* Visitor Page
+-------------------------------------------------- */
+
+.resident-action .btn {
+  width:120px;
+  margin:20px;
+}
+
+.modal-backdrop, .modal-backdrop.fade.in {
+opacity: 0.6;
+filter: alpha(opacity=60);
+}
+
