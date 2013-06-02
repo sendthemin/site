@@ -1,3 +1,8 @@
+    <script type="text/javascript">
+		$(function() {
+		  $('#datepicker').datepicker();
+		});
+	</script>
 
 <!-- Visitor Modal -->
 <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog"
@@ -12,34 +17,62 @@ aria-labelledby="myModalLabel" aria-hidden="true">
 	</div>
 	<div class="modal-body">
 		<form class="form-inline">
-			<input type="text" class="input-medium" placeholder="Guest">
-  			<input type="text" class="input-medium" placeholder="Time">
-  			<input type="text" class="input-medium" placeholder="Duration">
+			<div class="input-append">
+				<input type="text" class="input-medium" placeholder="Guest Name">
+				<span class="add-on">
+					<i class="icon-user"></i>
+				</span>
+			</div>	
+			<div class="input-append">
+				<input data-format="yyyy-MM-dd" type="text" id="datepicker" class="input-small" placeholder="Date" >
+				<span class="add-on">
+					<i class="icon-calendar"></i>
+				</span>
+			</div>
+			<div class="input-append">
+				<input type="text" class="input-small" placeholder="Duration">
+				<span class="add-on">
+					<i class="icon-time"></i>
+				</span>
+			</div>	
 	</div>
 	<div class="modal-footer">
-		<button type="submit" class="btn btn-primary">Add!</button>
+		<button type="submit" class="btn btn-primary">Add Visitor</button>
 		</form>
 	</div>
 </div>
+
+
 <!-- Resident Page -->
+
+
 <div class="container-fluid">
 	<div class="row span6">
 		<h1>
 			Identity
 		</h1>
+		<a href=""
 	</div>
 	<div style="clear:both;"></div>
+
+<!-- Alert Section -->
 		<div class="alert">
 			<p>
-				This is not a test
+				The Alert Will pop up here
 			</p>
 		</div>
 	<div style="clear:both;"></div>
+
+<!-- Action Buttons | Visitors & Food -->
+
     <div class="row span6 resident-action">
 		<a href="#myModal" role="button" class="btn btn-success btn-large" data-toggle="modal">Visitors</a>
 		<a href="#" role="button" class="btn btn-success btn-large" >Food</a>
 	</div>
 	<div style="clear:both;">
+
+<!-- Active Visitors Table -->
+
 	<div class="row span6">
 		<h3>Active Visitors</h3>
 		<table class="table table-bordered table-striped">
@@ -61,6 +94,9 @@ aria-labelledby="myModalLabel" aria-hidden="true">
 		</table>
 	</div>
 	<div style="clear:both;">	
+
+<!-- Log Table -->
+
 	<div class="row span6">
 		<h3>Log</h3>
 		<table class="table table-bordered table-striped">

@@ -222,12 +222,16 @@ body{
 -------------------------------------------------- */
 
 .resident-action .btn {
-  width:120px;
-  margin:20px;
+  width:100px;
+  margin:10px;
 }
 
 .modal-backdrop, .modal-backdrop.fade.in {
 opacity: 0.6;
 filter: alpha(opacity=60);
+}
+
+.input-append {
+  margin: 10px;
 }
 

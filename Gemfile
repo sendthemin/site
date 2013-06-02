@@ -6,6 +6,7 @@ gem 'devise'
 gem 'simple_form'
 gem 'cancan'
 gem "paperclip", "~> 3.0"
+gem 'jquery-ui-rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
