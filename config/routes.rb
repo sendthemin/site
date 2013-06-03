@@ -24,7 +24,8 @@ Sendthemin::Application.routes.draw do
   devise_for :users
 
   get 'about' => 'pages#about'
-  match '/test' => 'pages#test'
+  match '/resident' => 'pages#resident'
+  match '/gatekeeper' => 'pages#gatekeeper'
 
   root :to => 'pages#home'
 

@@ -218,7 +218,7 @@ body{
         }
       
       }
-/* Visitor Page
+/* Resident Page
 -------------------------------------------------- */
 
 .resident-action .btn {
@@ -233,5 +233,17 @@ filter: alpha(opacity=60);
 
 .input-append {
   margin: 10px;
+}
+
+/* Gatekeeper Page
+-------------------------------------------------- */
+
+.gatekeeper {
+  float:left;
+  margin:10px;
+}
+
+.gatekeeper_search {
+
 }
 
